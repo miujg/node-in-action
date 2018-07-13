@@ -9,7 +9,7 @@ var db = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: 'root',
-    database: ''
+    database: 'node_test'
 });
 
 var server = http.createServer(function (req, res) {
@@ -40,10 +40,11 @@ db.query(
     "CREATE TABLE IF NOT EXISTS work ("
     + "ID INT(10) NOT NULL AUTO_INCREMENT,"
     + "hourse DECIMAL(5,2) DEFAULT 0,"
-    + "date DATE"
-    + "archived INT(1) DEFAULT 0"
+    + "date DATE,"
+    + "archived INT(1) DEFAULT 0,"
     + "description LONGTEXT,"
-    + "PRIMARY KEY(id)",
+    + "PRIMARY KEY(id)"
+    + ")",
     function (err) {
         if (err) throw err;
         console.log('Server start on port 3000......');
