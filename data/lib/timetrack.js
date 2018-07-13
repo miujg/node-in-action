@@ -46,3 +46,27 @@ exports.add = function (db,req,res) {
     });
 };
 
+//显示任务列表 查询数据
+exports.show = function (res,db) {
+    var query = 'select * from work order by date';
+    db.query(query,function (err, row) {
+        if (err) throw err;
+        // 无报错的情况下将数据拼装成表格返回
+        var html = '<a>work list</a>';
+        html += exports.crateTableHtml(row);
+        exports.sendHtml(res,html);
+
+    })
+};
+
+exports.crateTableHtml = function (row) {
+    var html = '<table>';
+    for(var i in row){
+        html += '<tr>';
+        html += '<td>' + row[i].date + '</td>';
+        html += '<td>' + row[i].hours + '</td>';
+        html += '<td>' + row[i].description + '</td>';
+        html += '</tr>';
+    }
+    return html;
+};

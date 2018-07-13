@@ -17,6 +17,7 @@ var server = http.createServer(function (req, res) {
        case 'POST':
            switch (req.url){
                case '/':
+
                    break;
                case '/archive':
                    break;
@@ -27,6 +28,7 @@ var server = http.createServer(function (req, res) {
        case 'GET':
            switch (req.url){
                case '/':
+                   work.show(res,db);
                    break;
                case  '/archived':
                    break
