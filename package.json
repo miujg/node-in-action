@@ -1,0 +1,26 @@
+{
+  "name": "node-in-action",
+  "version": "1.0.0",
+  "description": "node in action learning notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "connect": "^3.6.6",
+    "cookie-parser": "^1.4.3",
+    "body-parser": "^1.18.3",
+    "morgan": "^1.1.2",
+    "vhost": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miujg/node-in-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miujg/node-in-action/issues"
+  },
+  "homepage": "https://github.com/miujg/node-in-action#readme"
+}
