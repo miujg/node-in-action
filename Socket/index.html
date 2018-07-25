@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script type="text/javascript">
+//        var socket = io.connect();
+//        socket.on('message', function (time) {
+//            document.getElementById('time').innerHTML = time;
+//        });
+        window.onload = function () {
+            var socket = io.connect();
+            socket.on('reload', function () {
+                window.location.reload();
+            });
+            socket.on('stylesheet', function (sheet) {
+                var link = document.createElement('link');
+                var head = document.getElementsByTagName('head')[0];
+                link.setAttribute('rel','stylesheet');
+                link.setAttribute('type','text/css');
+                link.setAttribute('href',sheet);
+                head.append(link);
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>xxxx</h1>
+    <span id="time"></span>
+</body>
+</html>
